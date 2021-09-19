@@ -30,7 +30,7 @@ def guessNumberByUser():
     chance = 10
     print("I choose a number between 0 and 100. Please try to find. You have 10 chances.")
     while chance > 0:
-        predict = input("Give me a number : ")
+        predict = int(input("Give me a number : "))
         if number == predict:
             print("You won :)")
             break
@@ -40,6 +40,8 @@ def guessNumberByUser():
             else:
                 print("Down")
             chance = chance - 1
+    if chance == 0:
+        print("I won :)")
 
 print("*****WELCOME THE GAME*****")
 game_type = None
@@ -49,4 +51,5 @@ while game_type not in ["1", "2"]:
 
 if game_type == "1":
     guessNumberByComputer()
-
+else:
+    guessNumberByUser()
